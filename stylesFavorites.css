@@ -1,0 +1,125 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #FDF3E7 !important;
+    color: #5A4632 !important;
+    font-family: Kaisei HarunoUmi, serif !important;
+}
+
+/* navbar  */
+.navbar {
+    background-color: #5A4632;
+}
+.navbar a {
+    color: #FDF3E7;
+    font-size: medium;
+
+}
+
+.navbar .nav-link {
+    margin-right: 50px;
+
+}
+
+
+.navbar .nav-link, .nav-link-current,
+.navbar-brand {
+    color: #FDF3E7;
+
+}
+.navbar .nav-link:last-child {
+    color: #FFD7A0;
+    text-decoration: solid;
+}
+
+
+.navbar .nav-link:hover,
+.navbar-brand:hover {
+    color: #FFD7A0;
+}
+
+
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+  background-color: #FDF3E7;
+}
+
+.hamburger:hover .hamburger-inner,
+.hamburger:hover .hamburger-inner::before,
+.hamburger:hover .hamburger-inner::after {
+  background-color: #FFD7A0;
+}
+
+
+/* favorit sidan */
+.favorite-section {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* bok korten */
+.book-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5a4632;
+  padding: 20px;
+  margin: 15px;
+  width: 200px;
+  height: 350px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.book-card img.book-cover {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.book-info {
+  text-align: center;
+  color: #f2e5d5;
+  padding: 10px 0;
+}
+
+.book-info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.book-info p {
+  font-size: 0.9rem;
+  color: #f2e5d5;
+  margin: 0;
+}
+
+.remove-favorite-btn {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 10008px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-favorite-btn img {
+  width: 18px;
+  height: 18px;
+}
