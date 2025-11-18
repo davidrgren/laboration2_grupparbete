@@ -1,0 +1,343 @@
+/* Importera typsnitt 'IM Fell English SC'  */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+
+/* ====================== Generell Config ====================== */
+html {
+    overflow-x: hidden; /* Förhindra horisontell scroll */
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100svh; /* Begränsar viewport så att inget viktigt döljs bakom UI */
+    font-family: 'IM Fell English SC', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #deb887;
+}
+
+.light-mode {
+    background-color: #deb887;
+    color: #4c2b17;
+}
+
+.dark-mode {
+    background-color: #4c2b17;
+    color: #deb887;
+}
+
+/* ====================== Header Config ====================== */
+#hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+        url(assets/images/pexels-minan1398-694740.jpg); /* Lätt mörkläggning över bilden */
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+}
+
+#hero nav {
+    display: flex;
+    padding: 0 1rem 0 1rem; /* Ger utrymme längst ut på kanterna */
+    height: 7rem;
+    position: sticky;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Mjukare kant */
+    backdrop-filter: blur(25px);
+    z-index: 999; /* Se till att navbar alltid positioneras längst fram */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-logo {
+    font-size: 4rem;
+}
+
+.nav-menu li {
+    display: flex;
+    text-align: center;
+    gap: 3rem;
+}
+
+.nav-menu a {
+    font-size: 1.8rem;
+    transition: 0.4s ease;
+}
+
+.nav-menu a:hover {
+    color: lightgrey;
+    transform: scale(1.3);
+}
+
+/* Hamburgar-meny config */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hamburgar-meny "bar" config */
+.bar {
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin: 6px auto;
+    border-radius: 1em;
+    background: #deb887;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Ljust/mörkt-läge knapp config */
+
+#theme-button {
+    text-decoration: none;
+}
+
+.lightMode-icon {
+    display: inline;
+}
+
+.darkMode-icon {
+    display: none;
+}
+
+body.dark-mode .lightMode-icon {
+    display: none; /* Göm ljust läge ikon när mörkt läge är aktivt */
+}
+
+body.dark-mode .darkMode-icon {
+    display: inline;
+}
+
+/* ====================== (heter s2 tillfälligt) Config ====================== */
+#s2 {
+    height: 35rem;
+    border: 5px solid purple;
+    color: white;
+}
+
+.carousel {
+    display: flex;
+    margin-top: 5rem;
+    border: 5px solid red;
+    overflow-x: auto;
+
+    -ms-overflow-style: none; /* Gömmer scrollbar för Edge */
+    scrollbar-width: none; /* Gömmer scrollbar för Firefox */
+}
+
+.carousel-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    animation: spin 30s infinite linear;
+    padding-right: 3rem; /* Utrymme mellan karusell-grupperna */
+}
+
+#hero::-webkit-scrollbar {
+    display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
+}
+
+.carousel-cell {
+    height: 25rem;
+    width: 15rem;
+    background-color: #4c2b17;
+    font-size: 3rem;
+    border-radius: 0.2em;
+    text-align: center; /* Ändra senare? */
+    align-content: center;
+}
+
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100%;
+    }
+}
+
+/* ====================== (heter s3 tillfälligt) Config ====================== */
+#s3 {
+    border: 3px solid blue;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#s3 h2 {
+    font-size: 3rem;
+    text-shadow: -3px -3px white;
+}
+
+.s3-carousel {
+    color: white;
+    font-size: 5rem;
+    width: 100%;
+    overflow-x: auto;
+
+    -ms-overflow-style: none; /* Gömmer scrollbar för Edge */
+    scrollbar-width: none; /* Gömmer scrollbar för Firefox */
+
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+    gap: 1rem;
+    scroll-behavior: smooth;
+}
+
+.s3-carousel::-webkit-scrollbar {
+    display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
+}
+
+.s3-carousel::scroll-button(right),
+.s3-carousel::scroll-button(left) {
+    content: '🢡';
+    border: none;
+    background-color: #4c2b17;
+    font-size: 2.5rem;
+    color: white;
+    border-top-left-radius: 35%;
+    border-bottom-left-radius: 35%;
+    position-area: right center;
+}
+
+.s3-carousel::scroll-button(left) {
+    content: '🢠';
+}
+
+/* Sänker synligheten på scrollbar-knappen om det inte går att scrolla mer */
+.s3-carousel::scroll-button(right):disabled,
+.s3-carousel::scroll-button(left):disabled {
+    opacity: 0.6;
+}
+
+.s3-carousel::scroll-button(right):hover,
+.s3-carousel::scroll-button(left):hover {
+    opacity: 0.8;
+}
+
+.carousel-box {
+    flex: 0 0 15rem;
+    height: 25rem;
+    background-color: #4c2b17;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* ====================== "S4" Config ====================== */
+#s4 {
+    border: 3px solid red;
+    height: 30rem;
+}
+
+/* ====================== Footer Config ====================== */
+footer {
+    padding: 1rem;
+    background: #4c2b17;
+    opacity: 0.95;
+}
+
+.app-shops {
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.5 ease-in-out;
+}
+
+.app-shops-icons:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* ====================== Viewport för mobiltelefoner Config ====================== */
+@media (max-width: 780px) {
+    #hero nav {
+        backdrop-filter: none;
+    }
+
+    .nav-logo {
+        font-size: 2.8rem;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        height: 100vh; /* Menyn tar upp hela höjden */
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-menu li {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    .nav-container .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0; /* Gömmer den andra "bar" span elementet */
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* ====================== Mellan-stor viewport Config ====================== */
+@media (min-width: 780px) and (max-width: 1200px) {
+    .nav-logo {
+        font-size: 2.8rem;
+    }
+
+    .nav-menu li {
+        gap: 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 1.4rem;
+    }
+}
+
+/*
+==== Dokumentation och länkar som använts ====
+https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp
+https://www.w3schools.com/charsets/ref_utf_arrows_supp_c.asp
+https://www.w3schools.com/howto/howto_js_slideshow.asp
+https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+
+==== Övrig Information ===
+Kombinationen #4C2B17 (brun färg) och #DFBC8E (beige färg) gav AAA-betyg i Color Review
+
+*/
