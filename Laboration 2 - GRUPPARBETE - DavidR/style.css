@@ -128,6 +128,103 @@ body.dark-mode .darkMode-icon {
     border: 5px solid purple;
     color: white;
 }
+.search-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#book-search {
+    width: 50%;
+    padding: 0.7rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    border: 2px solid #4c2b17;
+}
+
+#search-btn {
+    padding: 0.7rem 1rem;
+    background-color: #4c2b17;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+#search-results {
+    padding: 2rem;
+    background-color: #deb887;
+    color: #4c2b17;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    border-top: 3px solid #deb887;
+    border-bottom: 3px solid #deb887;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+#search-results div {
+    background-color: #4c2b17;
+    color: #deb887;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+
+#search-results div img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+#search-results div h4 {
+    font-size: 1rem;
+    margin: 0.3rem 0 0 0;
+}
+
+
+
+
+/* Favoritknapp på korten */
+.search-card {
+    position: relative;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #deb887;
+    font-size: 1.2rem;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.2);
+    background: rgba(0,0,0,0.7);
+}
+
+
+
+
+
 
 .carousel {
     display: flex;
@@ -156,11 +253,12 @@ body.dark-mode .darkMode-icon {
     height: 25rem;
     width: 15rem;
     background-color: #4c2b17;
-    font-size: 3rem;
+    font-size: 1.5rem;
     border-radius: 0.2em;
     text-align: center; /* Ändra senare? */
     align-content: center;
 }
+
 
 @keyframes spin {
     from {
@@ -187,7 +285,7 @@ body.dark-mode .darkMode-icon {
 
 .s3-carousel {
     color: white;
-    font-size: 5rem;
+    font-size: 1.5rem;
     width: 100%;
     overflow-x: auto;
 
@@ -236,8 +334,27 @@ body.dark-mode .darkMode-icon {
     flex: 0 0 15rem;
     height: 25rem;
     background-color: #4c2b17;
-    padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 0.2em;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+}
+
+/* Bildstil exakt som i övre karusellen */
+.carousel-box img {
+    width: 80%;
+    height: 70%;
+    object-fit: cover;
+}
+
+/* Textstil — kategori istället för boktitel */
+.carousel-box p {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    color: white;
 }
 
 /* ====================== "S4" Config ====================== */
