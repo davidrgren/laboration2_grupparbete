@@ -78,7 +78,8 @@ function fillSearchResults(books) {
     books.forEach((book) => {
     const info = book.volumeInfo;
     const thumbnail =
-        info.imageLinks?.thumbnail
+        info.imageLinks?.thumbnail ||
+        "https://via.placeholder.com/128x195?text=No+Cover";
     const title = info.title || "Ingen titel";
 
     const card = document.createElement("div");
@@ -126,7 +127,8 @@ async function searchBooks(query) {
 
     data.items.slice(0, carouselCells.length).forEach((book, i) => {
         const info = book.volumeInfo;
-        const thumbnail = info.imageLinks?.thumbnail
+        const thumbnail = info.imageLinks?.thumbnail ||
+            "https://via.placeholder.com/128x195?text=No+Cover";
 
         carouselCells[i].innerHTML = `
             <img src="${thumbnail}" />
@@ -191,7 +193,8 @@ async function fetchCategoryBooks() {
             // Ta första boken i kategorin
             const book = data.items?.[0]?.volumeInfo;
             const thumbnail =
-                book?.imageLinks?.thumbnail
+                book?.imageLinks?.thumbnail ||
+                "https://via.placeholder.com/128x195?text=No+Cover";
 
             // Lägg in bok o kategori namn under
             boxes[i].innerHTML = `
@@ -212,6 +215,7 @@ categoryBoxes.forEach((box, index) => {
     box.addEventListener("click", () => {
         const category = categories[index];
         if (category) {
+            // Sök böcker med kategori-namnet
             searchBooks(category)
 
 
