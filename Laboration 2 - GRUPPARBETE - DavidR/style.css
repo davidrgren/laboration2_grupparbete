@@ -179,8 +179,6 @@ body.dark-mode .darkMode-icon {
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
@@ -199,10 +197,7 @@ body.dark-mode .darkMode-icon {
 
 
 
-#search-results div:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
+
 /* Favoritknapp på korten */
 .search-card {
     position: relative;
