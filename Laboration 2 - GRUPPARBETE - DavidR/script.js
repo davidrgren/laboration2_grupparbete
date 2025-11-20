@@ -87,7 +87,7 @@ function fillSearchResults(books) {
 
     card.innerHTML = `
         <div class="card-img-wrapper" style="position:relative; width:100%;">
-            <img src="${thumbnail}" style="width:100%; height:200px; object-fit:cover; border-radius:0.2rem;" />
+            <img src="${thumbnail}" style="width:100%; height:200px; object-fit:cover; " />
             <button class="favorite-btn" title="Favorit">
                 <i class="fa-regular fa-star"></i>
             </button>
