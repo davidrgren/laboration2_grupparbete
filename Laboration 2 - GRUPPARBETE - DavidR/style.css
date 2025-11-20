@@ -348,7 +348,6 @@ body.dark-mode .darkMode-icon {
     width: 80%;
     height: 70%;
     object-fit: cover;
-    border-radius: 0.2em;
 }
 
 /* Textstil — kategori istället för boktitel */
