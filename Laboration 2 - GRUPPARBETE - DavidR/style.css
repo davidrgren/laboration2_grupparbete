@@ -17,33 +17,149 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-a {
     text-decoration: none;
-    color: #deb887;
 }
 
+/* ====================== Ljust läge Config ====================== */
 .light-mode {
     background-color: #deb887;
     color: #4c2b17;
 }
 
+.light-mode a,
+svg {
+    color: #4c2b17;
+    fill: #4c2b17;
+    font-weight: bold;
+}
+
+.light-mode .carousel-cell,
+.bar,
+.favoritesBookCard {
+    background-color: #4c2b17;
+}
+
+.light-mode .hero nav {
+    background: rgba(222, 184, 135, 0.5);
+    text-shadow: 1px 1px #deb887;
+}
+
+.light-mode #favoritesHeroHeader h2 {
+    text-shadow: 5px 5px #deb887;
+}
+
+.light-mode #favoritesHeroHeader p {
+    text-shadow: 2px 2px #deb887;
+}
+
+.light-mode .book-cover,
+.book-info {
+    border-color: #deb887;
+    color: #deb887;
+}
+
+.light-mode .book-info h2,
+h3 {
+    text-shadow: 1px 1px #deb887;
+}
+
+.light-mode .removeFavoritesBtn {
+    background-color: #deb887;
+}
+
+/* ====================== Mörkt läge Config ====================== */
 .dark-mode {
     background-color: #4c2b17;
     color: #deb887;
 }
 
-/* ====================== Header Config ====================== */
-#hero {
+.dark-mode a {
+    color: #deb887;
+}
+
+.dark-mode svg {
+    fill: #deb887; /* Denna kod fungerar bara om den är självständig av någon anledning */
+}
+
+.dark-mode .bar {
+    background: #deb887;
+}
+
+.dark-mode .carousel-cell {
+    background-color: #deb887;
+}
+
+.dark-mode .hero nav {
+    background: rgba(76, 43, 23, 0.3);
+}
+
+.dark-mode #favoritesHeroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
+
+.dark-mode #favoritesHeroHeader p {
+    text-shadow: 2px 2px #4c2b17;
+}
+
+.dark-mode .book-cover,
+.book-info {
+    border-color: #4c2b17;
+    color: #4c2b17;
+}
+
+.dark-mode .favoritesBookCard {
+    background-color: #deb887;
+}
+
+.dark-mode .book-info h2,
+h3 {
+    text-shadow: 2px 2px #4c2b17;
+}
+
+.dark-mode .removeFavoritesBtn {
+    background-color: #4c2b17;
+}
+
+.dark-mode .removeFavoritesBtn img {
+    filter: invert(1);
+}
+
+/* ====================== Hero Config ====================== */
+#homePage {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
         url(assets/images/pexels-minan1398-694740.jpg); /* Lätt mörkläggning över bilden */
     background-position: center;
     background-size: cover;
-    height: 50vh;
+    height: 75vh;
 }
 
-#hero nav {
+#favoritesPage {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+        url(assets/images/pexels-polina-zimmerman-3747468.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 75vh;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Mjukare kant */
+}
+
+#favoritesHeroHeader {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+#favoritesHeroHeader h2 {
+    font-size: 10rem;
+}
+
+#favoritesHeroHeader p {
+    font-size: 3rem;
+}
+
+/* ====================== Nav-bar Config ====================== */
+.hero nav {
     display: flex;
     padding: 0 1rem 0 1rem; /* Ger utrymme längst ut på kanterna */
     height: 7rem;
@@ -60,7 +176,13 @@ a {
     width: 100%;
 }
 
+.logo-icon {
+    width: 7rem;
+    height: 5rem;
+}
+
 .nav-logo {
+    display: flex;
     font-size: 4rem;
 }
 
@@ -96,14 +218,30 @@ a {
     height: 4px;
     margin: 6px auto;
     border-radius: 1em;
-    background: #deb887;
     transition: all 0.3s ease-in-out;
 }
 
 /* Ljust/mörkt-läge knapp config */
-
 #theme-button {
-    text-decoration: none;
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+#theme-button svg {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#theme-button:hover {
+    transform: scale(1.3);
+    transition: 0.1s ease;
+}
+
+/* Visuell feedback när användaren klickar på knappen */
+#theme-button:active {
+    transform: scale(0.8);
+    transition: 0.1s ease;
 }
 
 .lightMode-icon {
@@ -155,11 +293,11 @@ body.dark-mode .darkMode-icon {
 .carousel-cell {
     height: 25rem;
     width: 15rem;
-    background-color: #4c2b17;
     font-size: 3rem;
     border-radius: 0.2em;
     text-align: center; /* Ändra senare? */
     align-content: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
 }
 
 @keyframes spin {
@@ -182,7 +320,17 @@ body.dark-mode .darkMode-icon {
 
 #s3 h2 {
     font-size: 3rem;
-    text-shadow: -3px -3px white;
+    text-shadow: -1px -1px white;
+}
+
+#s3 p {
+    font-size: 1.25rem;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .s3-carousel {
@@ -246,6 +394,76 @@ body.dark-mode .darkMode-icon {
     height: 30rem;
 }
 
+/* ====================== Favorit-listan Config ====================== */
+#favoritesList {
+    height: 40rem;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.favoritesBookCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1.2rem;
+    height: 30rem;
+    width: 20rem;
+    border-radius: 3rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.book-cover {
+    width: 100%;
+    height: 60%;
+    border-radius: 3rem;
+    object-fit: cover;
+    border: 10px double;
+}
+
+.book-info {
+    border-radius: 1rem;
+    border: 6px double;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.book-info h2 {
+    color: white;
+    font-size: 2.2rem;
+}
+
+.book-info h3 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.removeFavoritesBtn {
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.removeFavoritesBtn:hover {
+    transform: scale(1.1);
+}
+
+.removeFavoritesBtn:active {
+    transform: scale(0.8);
+    transition: 0.1s ease;
+}
+
+.removeFavoritesBtn img {
+    width: 2rem;
+    height: 2rem;
+}
+
 /* ====================== Footer Config ====================== */
 footer {
     padding: 1rem;
@@ -258,20 +476,19 @@ footer {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    transition: 0.5 ease-in-out;
 }
 
-.app-shops-icons:hover {
-    transform: scale(1.1);
-    color: white;
+.app-shops-icons a {
+    transition: 0.4s ease;
 }
 
-/* ====================== Viewport för mobiltelefoner Config ====================== */
-@media (max-width: 780px) {
-    #hero nav {
-        backdrop-filter: none;
-    }
+.app-shops-icons a:hover {
+    transform: scale(1.3);
+    color: lightgrey;
+}
 
+/* ====================== Viewport för mindre skärmar Config ====================== */
+@media (max-width: 1200px) {
     .nav-logo {
         font-size: 2.8rem;
     }
@@ -284,7 +501,21 @@ footer {
         right: 0;
         padding: 5rem 1.5rem;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(16px);
+    }
+
+    .light-mode .hero nav {
+        background: rgba(222, 184, 135, 0.7);
+        backdrop-filter: none;
+    }
+
+    .light-mode .nav-menu {
+        background: rgba(222, 184, 135, 0.3);
+    }
+
+    .dark-mode .hero nav {
+        background: rgba(76, 43, 23, 0.7);
+        backdrop-filter: none;
     }
 
     .nav-menu li {
@@ -311,21 +542,6 @@ footer {
 
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
-    }
-}
-
-/* ====================== Mellan-stor viewport Config ====================== */
-@media (min-width: 780px) and (max-width: 1200px) {
-    .nav-logo {
-        font-size: 2.8rem;
-    }
-
-    .nav-menu li {
-        gap: 1rem;
-    }
-
-    .nav-menu a {
-        font-size: 1.4rem;
     }
 }
 
