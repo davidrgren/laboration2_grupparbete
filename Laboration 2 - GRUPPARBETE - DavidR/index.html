@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bokfavoriten - Spara dina favoritböcker!</title>
+        <title>📖 Bokfavoriten - Spara dina favoritböcker!</title>
 
         <!-- Importera ikoner/symboler -->
         <link
@@ -19,6 +19,7 @@
     <body class="light-mode">
         <!-- Hero -->
         <section class="hero" id="homePage">
+            <!-- Nav -->
             <nav>
                 <div class="nav-container">
                     <a href="index.html" class="nav-logo"
@@ -28,12 +29,14 @@
                             class="logo-icon"
                         />Bokfavoriten</a
                     >
+                    <!-- Hamburgarmenyn för mindre skärmar -->
                     <button class="menu-toggle">
                         <span class="bar"></span><span class="bar"></span
                         ><span class="bar"></span>
                     </button>
                     <ul class="nav-menu">
                         <li>
+                            <!-- Byt mellan ljust och mörkt läge button -->
                             <button id="theme-button">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -68,19 +71,24 @@
                     </ul>
                 </div>
             </nav>
+            <!-- Rubrik och searchbar -->
+            <div class="heroHeader">
+                <h2>Sök Efter En Bok</h2>
+                <div class="searchBar">
+                    <input
+                        type="text"
+                        id="book-search"
+                        placeholder="Boktitel..."
+                    />
+                    <button id="search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
         </section>
 
         <!-- Sektion 2 -->
         <section id="s2">
-            <!-- söknings rutan -->
-            <div class="search-wrapper">
-                <input
-                    type="text"
-                    id="book-search"
-                    placeholder="Sök efter en bok..."
-                />
-                <button id="search-btn"><i class="fa fa-search"></i></button>
-            </div>
             <div class="carousel">
                 <div class="carousel-group">
                     <div class="carousel-cell">1</div>

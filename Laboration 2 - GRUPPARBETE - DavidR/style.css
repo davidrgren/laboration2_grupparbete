@@ -44,7 +44,8 @@ svg {
     text-shadow: 1px 1px #deb887;
 }
 
-.light-mode #favoritesHeroHeader h2 {
+.light-mode #favoritesHeroHeader h2,
+.heroHeader h2 {
     text-shadow: 5px 5px #deb887;
 }
 
@@ -65,6 +66,16 @@ h3 {
 
 .light-mode .removeFavoritesBtn {
     background-color: #deb887;
+}
+
+.light-mode .searchBar {
+    border: 8px double #deb887;
+    border-radius: 2rem;
+}
+
+.light-mode #search-btn {
+    background: #deb887;
+    color: #4c2b17;
 }
 
 /* ====================== Mörkt läge Config ====================== */
@@ -124,13 +135,39 @@ h3 {
     filter: invert(1);
 }
 
+.dark-mode .heroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
+
+.dark-mode .searchBar {
+    border: 8px double #deb887;
+    border-radius: 2rem;
+}
+
+.dark-mode #search-btn {
+    background: #4c2b17;
+    color: #deb887;
+}
+
 /* ====================== Hero Config ====================== */
 #homePage {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(assets/images/pexels-minan1398-694740.jpg); /* Lätt mörkläggning över bilden */
     background-position: center;
     background-size: cover;
     height: 75vh;
+}
+
+.heroHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10rem auto;
+}
+
+.heroHeader h2 {
+    font-size: 8rem;
+    color: #f0ece1; /* Snällare färg än helvitt */
 }
 
 #favoritesPage {
@@ -143,7 +180,7 @@ h3 {
 }
 
 #favoritesHeroHeader {
-    color: white;
+    color: #f0ece1; /* Snällare färg än helvitt */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,6 +193,33 @@ h3 {
 
 #favoritesHeroHeader p {
     font-size: 3rem;
+}
+
+/* ====================== Searchbar Config ====================== */
+.searchBar {
+    height: 5rem;
+    width: 60svw;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+#book-search {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 3rem;
+    border-top-left-radius: 1.6rem;
+    border-bottom-left-radius: 1.6rem;
+    background-color: #f0ece1; /* Snällare färg än helvitt */
+}
+
+#search-btn {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-top-right-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
+    cursor: pointer;
+    font-size: 2.5rem;
 }
 
 /* ====================== Nav-bar Config ====================== */
@@ -274,23 +338,6 @@ body.dark-mode .darkMode-icon {
     margin-top: 1rem;
 }
 
-#book-search {
-    width: 50%;
-    padding: 0.7rem 1rem;
-    font-size: 1.2rem;
-    border-radius: 0.3rem;
-    border: 2px solid #4c2b17;
-}
-
-#search-btn {
-    padding: 0.7rem 1rem;
-    background-color: #4c2b17;
-    color: white;
-    border: none;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
 #search-results {
     padding: 2rem;
     background-color: #deb887;
@@ -304,9 +351,6 @@ body.dark-mode .darkMode-icon {
     transition: all 0.3s ease-in-out;
 }
 
-
-
-
 #search-results div {
     background-color: #4c2b17;
     color: #deb887;
@@ -318,7 +362,6 @@ body.dark-mode .darkMode-icon {
     align-items: center;
     justify-content: start;
 }
-
 
 #search-results div img {
     width: 100%;
@@ -332,9 +375,6 @@ body.dark-mode .darkMode-icon {
     margin: 0.3rem 0 0 0;
 }
 
-
-
-
 /* Favoritknapp på korten */
 .search-card {
     position: relative;
@@ -344,7 +384,7 @@ body.dark-mode .darkMode-icon {
     position: absolute;
     top: 5px;
     right: 5px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 50%;
     padding: 5px;
@@ -356,13 +396,8 @@ body.dark-mode .darkMode-icon {
 
 .favorite-btn:hover {
     transform: scale(1.2);
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
 }
-
-
-
-
-
 
 .carousel {
     display: flex;
@@ -396,7 +431,6 @@ body.dark-mode .darkMode-icon {
     align-content: center;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
 }
-
 
 @keyframes spin {
     from {
@@ -597,6 +631,7 @@ footer {
 
 .app-shops-icons a {
     transition: 0.4s ease;
+    color: #deb887;
 }
 
 .app-shops-icons a:hover {
@@ -608,6 +643,11 @@ footer {
 @media (max-width: 1200px) {
     .nav-logo {
         font-size: 2.8rem;
+    }
+
+    .logo-icon {
+        height: 3rem;
+        width: 4rem;
     }
 
     .nav-menu {
