@@ -34,48 +34,12 @@ svg {
 }
 
 .light-mode .carousel-cell,
-.bar,
-.favoritesBookCard {
+.bar {
     background-color: #4c2b17;
-}
-
-.light-mode .hero nav {
-    background: rgba(222, 184, 135, 0.5);
-    text-shadow: 1px 1px #deb887;
-}
-
-.light-mode #favoritesHeroHeader h2,
-.heroHeader h2 {
-    text-shadow: 5px 5px #deb887;
-}
-
-.light-mode #favoritesHeroHeader p {
-    text-shadow: 2px 2px #deb887;
-}
-
-.light-mode .book-cover,
-.book-info {
-    border-color: #deb887;
-    color: #deb887;
-}
-
-.light-mode .book-info h2,
-h3 {
-    text-shadow: 1px 1px #deb887;
 }
 
 .light-mode .removeFavoritesBtn {
     background-color: #deb887;
-}
-
-.light-mode .searchBar {
-    border: 8px double #deb887;
-    border-radius: 2rem;
-}
-
-.light-mode #search-btn {
-    background: #deb887;
-    color: #4c2b17;
 }
 
 /* ====================== Mörkt läge Config ====================== */
@@ -100,53 +64,12 @@ h3 {
     background-color: #deb887;
 }
 
-.dark-mode .hero nav {
-    background: rgba(76, 43, 23, 0.3);
-}
-
-.dark-mode #favoritesHeroHeader h2 {
-    text-shadow: 5px 5px #4c2b17;
-}
-
-.dark-mode #favoritesHeroHeader p {
-    text-shadow: 2px 2px #4c2b17;
-}
-
-.dark-mode .book-cover,
-.book-info {
-    border-color: #4c2b17;
-    color: #4c2b17;
-}
-
-.dark-mode .favoritesBookCard {
-    background-color: #deb887;
-}
-
-.dark-mode .book-info h2,
-h3 {
-    text-shadow: 2px 2px #4c2b17;
-}
-
 .dark-mode .removeFavoritesBtn {
     background-color: #4c2b17;
 }
 
 .dark-mode .removeFavoritesBtn img {
     filter: invert(1);
-}
-
-.dark-mode .heroHeader h2 {
-    text-shadow: 5px 5px #4c2b17;
-}
-
-.dark-mode .searchBar {
-    border: 8px double #deb887;
-    border-radius: 2rem;
-}
-
-.dark-mode #search-btn {
-    background: #4c2b17;
-    color: #deb887;
 }
 
 /* ====================== Hero Config ====================== */
@@ -195,6 +118,26 @@ h3 {
     font-size: 3rem;
 }
 
+.light-mode #favoritesHeroHeader h2,
+.heroHeader h2 {
+    text-shadow: 5px 5px #deb887;
+}
+
+.light-mode #favoritesHeroHeader p {
+    text-shadow: 2px 2px #deb887;
+}
+
+.dark-mode #favoritesHeroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
+
+.dark-mode #favoritesHeroHeader p {
+    text-shadow: 2px 2px #4c2b17;
+}
+
+.dark-mode .heroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
 /* ====================== Searchbar Config ====================== */
 .searchBar {
     height: 5rem;
@@ -220,6 +163,26 @@ h3 {
     border-bottom-right-radius: 1.6rem;
     cursor: pointer;
     font-size: 2.5rem;
+}
+
+.light-mode .searchBar {
+    border: 8px double #deb887;
+    border-radius: 2rem;
+}
+
+.light-mode #search-btn {
+    background: #deb887;
+    color: #4c2b17;
+}
+
+.dark-mode .searchBar {
+    border: 8px double #deb887;
+    border-radius: 2rem;
+}
+
+.dark-mode #search-btn {
+    background: #4c2b17;
+    color: #deb887;
 }
 
 /* ====================== Nav-bar Config ====================== */
@@ -316,12 +279,102 @@ h3 {
     display: none;
 }
 
-body.dark-mode .lightMode-icon {
+.dark-mode .lightMode-icon {
     display: none; /* Göm ljust läge ikon när mörkt läge är aktivt */
 }
 
-body.dark-mode .darkMode-icon {
+.dark-mode .darkMode-icon {
     display: inline;
+}
+
+.light-mode .hero nav {
+    background: rgba(222, 184, 135, 0.5);
+    text-shadow: 1px 1px #deb887;
+}
+
+.dark-mode .hero nav {
+    background: rgba(76, 43, 23, 0.3);
+}
+
+/* ====================== Bok-karusell Config ====================== */
+#bookCarousel-section {
+    border: 3px solid green;
+    height: 35rem;
+}
+
+/* Bok-karusell */
+.bookCarousel {
+    display: flex;
+    margin-top: 5rem;
+    border: 5px solid red;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -ms-overflow-style: none; /* Gömmer scrollbar för Edge */
+    scrollbar-width: none; /* Gömmer scrollbar för Firefox */
+}
+
+.bookCarousel-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    animation: spin 30s infinite linear;
+    padding-right: 3rem; /* Utrymme mellan karusell-grupperna */
+}
+
+.bookCarousel::-webkit-scrollbar {
+    display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
+}
+
+.bookCarousel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 1.2rem;
+    height: 28rem;
+    width: 18rem;
+    border-radius: 3rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100%;
+    }
+}
+
+/* Bok-karusell ljust/mörkt tema config*/
+.light-mode .bookCarousel-card {
+    background: #4c2b17;
+}
+
+.light-mode .bookCarousel-card .book-info,
+.bookCarousel-card .book-cover {
+    border-color: #deb887;
+}
+
+.light-mode .bookCarousel-card .book-info h2,
+.bookCarousel-card .book-info h3 {
+    text-shadow: 2px 2px #deb887;
+}
+
+.dark-mode .bookCarousel-card {
+    background: #deb887;
+}
+
+.dark-mode .bookCarousel-card .book-info {
+    border-color: #4c2b17;
+}
+
+.dark-mode .bookCarousel-card .book-info h2,
+.bookCarousel-card .book-info h3 {
+    text-shadow: 2px 2px #4c2b17;
 }
 
 /* ====================== (heter s2 tillfälligt) Config ====================== */
@@ -399,11 +452,13 @@ body.dark-mode .darkMode-icon {
     background: rgba(0, 0, 0, 0.7);
 }
 
+/* Bok-karusell */
 .carousel {
     display: flex;
     margin-top: 5rem;
     border: 5px solid red;
     overflow-x: auto;
+    overflow-y: hidden;
 
     -ms-overflow-style: none; /* Gömmer scrollbar för Edge */
     scrollbar-width: none; /* Gömmer scrollbar för Firefox */
@@ -418,7 +473,7 @@ body.dark-mode .darkMode-icon {
     padding-right: 3rem; /* Utrymme mellan karusell-grupperna */
 }
 
-#hero::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
     display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
 }
 
@@ -539,12 +594,6 @@ body.dark-mode .darkMode-icon {
     color: white;
 }
 
-/* ====================== "S4" Config ====================== */
-#s4 {
-    border: 3px solid red;
-    height: 30rem;
-}
-
 /* ====================== Favorit-listan Config ====================== */
 #favoritesList {
     height: 40rem;
@@ -613,6 +662,35 @@ body.dark-mode .darkMode-icon {
 .removeFavoritesBtn img {
     width: 2rem;
     height: 2rem;
+}
+
+.light-mode .favoritesBookCard {
+    background: #4c2b17;
+}
+
+.light-mode .favoritesBookCard .book-info,
+.favoritesBookCard .book-cover {
+    border-color: #deb887;
+}
+
+.light-mode .favoritesBookCard .book-info h2,
+.favoritesBookCard .book-info h3 {
+    text-shadow: 2px 2px #deb887;
+}
+
+.dark-mode .favoritesBookCard {
+    background-color: #deb887;
+}
+
+.dark-mode .book-cover,
+.book-info {
+    border-color: #4c2b17;
+    color: #4c2b17;
+}
+
+.dark-mode .favoritesBookCard .book-info h2,
+.favoritesBookCard .book-info h3 {
+    text-shadow: 2px 2px #4c2b17;
 }
 
 /* ====================== Footer Config ====================== */
@@ -699,6 +777,26 @@ footer {
 
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
+    }
+
+    #favoritesHeroHeader {
+        text-align: center;
+    }
+
+    #favoritesHeroHeader h2 {
+        font-size: 6rem;
+    }
+
+    #favoritesHeroHeader p {
+        font-size: 2.4rem;
+    }
+
+    .heroHeader {
+        text-align: center;
+    }
+
+    .heroHeader h2 {
+        font-size: 6rem;
     }
 }
 
