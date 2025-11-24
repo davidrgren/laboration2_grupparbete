@@ -74,6 +74,7 @@ svg {
     background-position: center;
     background-size: cover;
     height: 75vh;
+    min-height: 35rem;
 }
 
 .heroHeader {
@@ -94,6 +95,7 @@ svg {
     background-position: center;
     background-size: cover;
     height: 75vh;
+    min-height: 35rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Mjukare kant */
 }
 
@@ -722,6 +724,10 @@ svg {
     height: 1.6rem;
 }
 
+.light-mode #favoritesList {
+    background: #deb887;
+}
+
 .light-mode .favoritesBookCard {
     background: #4c2b17;
 }
@@ -733,7 +739,12 @@ svg {
 
 .light-mode .favoritesBookCard .book-info h2,
 .favoritesBookCard .book-info h3 {
-    text-shadow: 2px 2px #deb887;
+    text-shadow: 2px 2px black;
+}
+
+.dark-mode #favoritesList {
+    background: url(assets/images/pexels-digitalbuggu-207908.jpg);
+    background-size: cover;
 }
 
 .dark-mode .favoritesBookCard {
@@ -764,6 +775,7 @@ footer {
 }
 
 .footerInfo a {
+    text-align: center;
     font-size: 1.2rem;
     color: white;
 }
