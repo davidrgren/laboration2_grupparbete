@@ -699,8 +699,8 @@ svg {
 
 /* ====================== Favorit-listan Config ====================== */
 #favoritesList {
-    min-height: 40rem;
-    padding: 3rem;
+    height: auto;
+    padding: 5rem 3rem 3rem 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -713,42 +713,42 @@ svg {
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-    padding: 1.2rem;
-    height: 30rem;
-    width: 20rem;
-    border-radius: 3rem;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    height: 28rem;
+    width: 14rem;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 .book-cover {
     width: 100%;
-    height: 60%;
-    border-radius: 3rem;
+    height: 55%;
+    border-radius: 2rem;
     object-fit: cover;
-    border: 10px double;
+    border: 6px double;
 }
 
 .book-info {
-    border-radius: 1rem;
-    border: 6px double;
-    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    border: 4px double;
+    padding: 0.4rem 0.8rem;
     text-align: center;
 }
 
 .book-info h2 {
     color: white;
-    font-size: 2.2rem;
+    font-size: 1.1rem;
 }
 
 .book-info h3 {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .removeFavoritesBtn {
     border: none;
     border-radius: 50%;
-    padding: 8px;
+    padding: 6px;
     cursor: pointer;
     transition: 0.5s ease;
 }
@@ -758,13 +758,13 @@ svg {
 }
 
 .removeFavoritesBtn:active {
-    transform: scale(0.8);
+    transform: scale(0.85);
     transition: 0.1s ease;
 }
 
 .removeFavoritesBtn img {
-    width: 2rem;
-    height: 2rem;
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .light-mode .favoritesBookCard {
