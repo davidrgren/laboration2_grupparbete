@@ -82,28 +82,65 @@ function fillSearchResults(books) {
 
         card.innerHTML = `
         <div class="card-img-wrapper" style="position:relative; width:100%;">
-            <img src="${thumbnail}" style="width:100%; height:200px; object-fit:cover; " />
+            <img src="${thumbnail}" style="width:100%;   height:200px; object-fit:cover; " />
             <button class="favorite-btn" title="Favorit">
+
                 <i class="fa-regular fa-star"></i>
             </button>
         </div>
         <h4 style="margin-top:0.5rem; font-size:1rem;">${title}</h4>
-    `
+    `; //stjärnan från fontawesome
 
-        // Favorit knappen på bok kortet
-        const favBtn = card.querySelector('.favorite-btn')
-        favBtn.addEventListener('click', () => {
-            const icon = favBtn.querySelector('i')
-            icon.classList.toggle('fa-regular')
-            icon.classList.toggle('fa-solid')
-            icon.style.color = icon.classList.contains('fa-solid')
-                ? '#FFD700'
-                : '#deb887'
-        })
 
-        resultsSection.appendChild(card)
-    })
+   // Favorit knappen på bok kortet
+const favBtn = card.querySelector(".favorite-btn");
+favBtn.addEventListener("click", () => {
+    const icon = favBtn.querySelector("i");
+    icon.classList.toggle("fa-regular");
+    icon.classList.toggle("fa-solid");
+
+    const bookData = {
+        title,
+        thumbnail
+    };
+
+    // Spara eller ta bort i localStorage
+    toggleFavorite(bookData);
+
+    // Färga ikonen
+    icon.style.color = icon.classList.contains("fa-solid") ? "#FFD700" : "#deb887";
+});
+
+
+    resultsSection.appendChild(card)
+})
+
 }
+async function toggleFavorite(book) {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    const exists = favorites.some(fav => fav.title === book.title);
+
+    if (exists) {
+        favorites = favorites.filter(fav => fav.title !== book.title);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+
+        await fetch(`http://localhost:3000/favorites/${encodeURIComponent(book.title)}`, {
+            method: "DELETE"
+        });
+    } else {
+
+        favorites.push(book);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+        await fetch("http://localhost:3000/favorites", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(book)
+        });
+    }
+}
+
+
 
 // Sök efter bok
 async function searchBooks(query) {
@@ -138,6 +175,8 @@ async function searchBooks(query) {
     // Fyll nya sökresultat med böcker
     fillSearchResults(data.items.slice(0, 12))
 }
+
+
 
 // tryck på sök
 searchBtn.addEventListener('click', () => {
@@ -212,7 +251,7 @@ categoryBoxes.forEach((box, index) => {
     box.addEventListener('click', () => {
         const category = categories[index]
         if (category) {
-            // Sök böcker med kategori-namnet
+
             searchBooks(category)
 
             searchInput.value = category
