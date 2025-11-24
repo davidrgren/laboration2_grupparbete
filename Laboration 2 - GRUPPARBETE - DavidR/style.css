@@ -34,33 +34,8 @@ svg {
 }
 
 .light-mode .carousel-cell,
-.bar,
-.favoritesBookCard {
+.bar {
     background-color: #4c2b17;
-}
-
-.light-mode .hero nav {
-    background: rgba(222, 184, 135, 0.5);
-    text-shadow: 1px 1px #deb887;
-}
-
-.light-mode #favoritesHeroHeader h2 {
-    text-shadow: 5px 5px #deb887;
-}
-
-.light-mode #favoritesHeroHeader p {
-    text-shadow: 2px 2px #deb887;
-}
-
-.light-mode .book-cover,
-.book-info {
-    border-color: #deb887;
-    color: #deb887;
-}
-
-.light-mode .book-info h2,
-h3 {
-    text-shadow: 1px 1px #deb887;
 }
 
 .light-mode .removeFavoritesBtn {
@@ -89,33 +64,6 @@ h3 {
     background-color: #deb887;
 }
 
-.dark-mode .hero nav {
-    background: rgba(76, 43, 23, 0.3);
-}
-
-.dark-mode #favoritesHeroHeader h2 {
-    text-shadow: 5px 5px #4c2b17;
-}
-
-.dark-mode #favoritesHeroHeader p {
-    text-shadow: 2px 2px #4c2b17;
-}
-
-.dark-mode .book-cover,
-.book-info {
-    border-color: #4c2b17;
-    color: #4c2b17;
-}
-
-.dark-mode .favoritesBookCard {
-    background-color: #deb887;
-}
-
-.dark-mode .book-info h2,
-h3 {
-    text-shadow: 2px 2px #4c2b17;
-}
-
 .dark-mode .removeFavoritesBtn {
     background-color: #4c2b17;
 }
@@ -126,11 +74,23 @@ h3 {
 
 /* ====================== Hero Config ====================== */
 #homePage {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url(assets/images/pexels-minan1398-694740.jpg); /* Lätt mörkläggning över bilden */
     background-position: center;
     background-size: cover;
     height: 75vh;
+}
+
+.heroHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10rem auto;
+}
+
+.heroHeader h2 {
+    font-size: 8rem;
+    color: #f0ece1; /* Snällare färg än helvitt */
 }
 
 #favoritesPage {
@@ -143,7 +103,7 @@ h3 {
 }
 
 #favoritesHeroHeader {
-    color: white;
+    color: #f0ece1; /* Snällare färg än helvitt */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,6 +116,73 @@ h3 {
 
 #favoritesHeroHeader p {
     font-size: 3rem;
+}
+
+.light-mode #favoritesHeroHeader h2,
+.heroHeader h2 {
+    text-shadow: 5px 5px #deb887;
+}
+
+.light-mode #favoritesHeroHeader p {
+    text-shadow: 2px 2px #deb887;
+}
+
+.dark-mode #favoritesHeroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
+
+.dark-mode #favoritesHeroHeader p {
+    text-shadow: 2px 2px #4c2b17;
+}
+
+.dark-mode .heroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
+/* ====================== Searchbar Config ====================== */
+.searchBar {
+    height: 5rem;
+    width: 60svw;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+#book-search {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 3rem;
+    border-top-left-radius: 1.6rem;
+    border-bottom-left-radius: 1.6rem;
+    background-color: #f0ece1; /* Snällare färg än helvitt */
+}
+
+#search-btn {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-top-right-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+.light-mode .searchBar {
+    border: 8px double #deb887;
+    border-radius: 2rem;
+}
+
+.light-mode #search-btn {
+    background: #deb887;
+    color: #4c2b17;
+}
+
+.dark-mode .searchBar {
+    border: 8px double #deb887;
+    border-radius: 2rem;
+}
+
+.dark-mode #search-btn {
+    background: #4c2b17;
+    color: #deb887;
 }
 
 /* ====================== Nav-bar Config ====================== */
@@ -226,6 +253,7 @@ h3 {
     background: none;
     cursor: pointer;
     border: none;
+    transition: 0.3s ease;
 }
 
 #theme-button svg {
@@ -235,7 +263,6 @@ h3 {
 
 #theme-button:hover {
     transform: scale(1.3);
-    transition: 0.1s ease;
 }
 
 /* Visuell feedback när användaren klickar på knappen */
@@ -252,20 +279,130 @@ h3 {
     display: none;
 }
 
-body.dark-mode .lightMode-icon {
+.dark-mode .lightMode-icon {
     display: none; /* Göm ljust läge ikon när mörkt läge är aktivt */
 }
 
-body.dark-mode .darkMode-icon {
+.dark-mode .darkMode-icon {
     display: inline;
 }
 
-/* ====================== (heter s2 tillfälligt) Config ====================== */
-#s2 {
-    height: 35rem;
-    border: 5px solid purple;
-    color: white;
+.light-mode .hero nav {
+    background: rgba(222, 184, 135, 0.7);
+    text-shadow: 1px 1px #deb887;
 }
+
+.dark-mode .hero nav {
+    background: rgba(76, 43, 23, 0.3);
+}
+
+/* ====================== Bok-karusell Config ====================== */
+#bookCarousel-section {
+    height: 35rem;
+    display: flex;
+}
+
+/* Bok-karusell */
+.bookCarousel {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -ms-overflow-style: none; /* Gömmer scrollbar för Edge */
+    scrollbar-width: none; /* Gömmer scrollbar för Firefox */
+}
+
+.bookCarousel-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    animation: spin 30s infinite linear;
+    padding-right: 3rem; /* Utrymme mellan karusell-grupperna */
+}
+
+.bookCarousel::-webkit-scrollbar {
+    display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
+}
+
+.bookCarousel-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    padding: 1.2rem;
+    height: 28rem;
+    width: 18rem;
+    border-radius: 3rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes spin {
+    from {
+        translate: 0;
+    }
+    to {
+        translate: -100%;
+    }
+}
+
+/* Bok-karusell ljust/mörkt tema config*/
+.light-mode #bookCarousel-section {
+    background: url(assets/images/pexels-fwstudio-33348-172303.jpg);
+    background-size: cover;
+}
+
+.light-mode .bookCarousel-card {
+    background: #4c2b17;
+}
+
+.light-mode .bookCarousel-card .book-info,
+.bookCarousel-card .book-cover {
+    border-color: #deb887;
+}
+
+.light-mode .bookCarousel-card .book-info h2,
+.bookCarousel-card .book-info h3 {
+    text-shadow: 2px 2px #deb887;
+}
+
+.dark-mode #bookCarousel-section {
+    background: url(assets/images/pexels-efrem-efre-2786187-34464883.jpg);
+    background-size: cover;
+}
+
+.dark-mode .bookCarousel-card {
+    background: #deb887;
+}
+
+.dark-mode .bookCarousel-card .book-info {
+    border-color: #4c2b17;
+}
+
+.dark-mode .bookCarousel-card .book-info h2,
+.bookCarousel-card .book-info h3 {
+    text-shadow: 2px 2px #4c2b17;
+}
+
+/* ====================== Sökresultat Config ====================== */
+#searchResults {
+    min-height: 20rem;
+}
+
+#searchForBooks {
+    padding: 8rem;
+    text-align: center;
+}
+
+#searchResults h3 {
+    color: gray;
+    font-size: 3rem;
+    opacity: 0.6;
+}
+
 .search-wrapper {
     width: 100%;
     display: flex;
@@ -274,23 +411,6 @@ body.dark-mode .darkMode-icon {
     margin-top: 1rem;
 }
 
-#book-search {
-    width: 50%;
-    padding: 0.7rem 1rem;
-    font-size: 1.2rem;
-    border-radius: 0.3rem;
-    border: 2px solid #4c2b17;
-}
-
-#search-btn {
-    padding: 0.7rem 1rem;
-    background-color: #4c2b17;
-    color: white;
-    border: none;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    font-size: 1.2rem;
-}
 #search-results {
     padding: 2rem;
     background-color: #deb887;
@@ -304,9 +424,6 @@ body.dark-mode .darkMode-icon {
     transition: all 0.3s ease-in-out;
 }
 
-
-
-
 #search-results div {
     background-color: #4c2b17;
     color: #deb887;
@@ -318,7 +435,6 @@ body.dark-mode .darkMode-icon {
     align-items: center;
     justify-content: start;
 }
-
 
 #search-results div img {
     width: 100%;
@@ -332,9 +448,6 @@ body.dark-mode .darkMode-icon {
     margin: 0.3rem 0 0 0;
 }
 
-
-
-
 /* Favoritknapp på korten */
 .search-card {
     position: relative;
@@ -344,7 +457,7 @@ body.dark-mode .darkMode-icon {
     position: absolute;
     top: 5px;
     right: 5px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 50%;
     padding: 5px;
@@ -356,19 +469,21 @@ body.dark-mode .darkMode-icon {
 
 .favorite-btn:hover {
     transform: scale(1.2);
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
 }
 
+/* ====================== S2 (TAS BORT SENARE!) Config ====================== */
+#s2 {
+    height: 35rem;
+    color: white;
+}
 
-
-
-
-
+/* Bok-karusell */
 .carousel {
     display: flex;
     margin-top: 5rem;
-    border: 5px solid red;
     overflow-x: auto;
+    overflow-y: hidden;
 
     -ms-overflow-style: none; /* Gömmer scrollbar för Edge */
     scrollbar-width: none; /* Gömmer scrollbar för Firefox */
@@ -383,7 +498,7 @@ body.dark-mode .darkMode-icon {
     padding-right: 3rem; /* Utrymme mellan karusell-grupperna */
 }
 
-#hero::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
     display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
 }
 
@@ -397,7 +512,6 @@ body.dark-mode .darkMode-icon {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
 }
 
-
 @keyframes spin {
     from {
         translate: 0;
@@ -407,31 +521,43 @@ body.dark-mode .darkMode-icon {
     }
 }
 
-/* ====================== (heter s3 tillfälligt) Config ====================== */
-#s3 {
-    border: 3px solid blue;
+/* ====================== Populära Kategorier Config ====================== */
+#popularCategories {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 50rem;
 }
 
-#s3 h2 {
-    font-size: 3rem;
-    text-shadow: -1px -1px white;
+#popularCategories h2 {
+    font-size: 6rem;
+    color: #f0ece1;
+    text-shadow: 4px 4px #4c2b17;
 }
 
-#s3 p {
-    font-size: 1.25rem;
+#popularCategories p {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .section-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 1.2rem;
+    border: 1.2rem double;
+    border-radius: 6rem;
+    backdrop-filter: blur(4px);
+    margin-top: 2rem;
 }
 
-.s3-carousel {
+.light-mode .section-header {
+    border-color: #4c2b17;
+}
+
+.dark-mode .section-header {
+    border-color: #deb887;
+}
+
+.categoryCarousel {
     color: white;
     font-size: 1.5rem;
     width: 100%;
@@ -442,53 +568,80 @@ body.dark-mode .darkMode-icon {
 
     display: flex;
     flex-direction: row;
-    padding-top: 1rem;
-    gap: 1rem;
+    padding: 1rem;
+    gap: 2rem;
     scroll-behavior: smooth;
+    anchor-name: --categoryCarousel;
+    scroll-snap-type: x mandatory; /* Innehållet placeras snyggare vid scrollning */
 }
 
-.s3-carousel::-webkit-scrollbar {
+.categoryCarousel::-webkit-scrollbar {
     display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
 }
 
-.s3-carousel::scroll-button(right),
-.s3-carousel::scroll-button(left) {
+.categoryCarousel::scroll-button(right),
+.categoryCarousel::scroll-button(left) {
     content: '🢡';
     border: none;
-    background-color: #4c2b17;
-    font-size: 2.5rem;
-    color: white;
-    border-top-left-radius: 35%;
-    border-bottom-left-radius: 35%;
-    position-area: right center;
+    font-size: 3rem;
+    border-radius: 50%;
+    position: fixed;
+    position-anchor: --categoryCarousel;
+    position-area: bottom center;
+    translate: 80%;
 }
 
-.s3-carousel::scroll-button(left) {
+.light-mode .categoryCarousel::scroll-button(right),
+.categoryCarousel::scroll-button(left) {
+    background-color: #4c2b17;
+    color: #f0ece1;
+}
+
+.dark-mode .categoryCarousel::scroll-button(right) {
+    background-color: #deb887;
+    color: #4c2b17;
+}
+
+.dark-mode .categoryCarousel::scroll-button(left) {
+    background-color: #deb887;
+    color: #4c2b17;
+}
+
+.categoryCarousel::scroll-button(left) {
     content: '🢠';
+    position-area: bottom center;
+    translate: -80%;
 }
 
 /* Sänker synligheten på scrollbar-knappen om det inte går att scrolla mer */
-.s3-carousel::scroll-button(right):disabled,
-.s3-carousel::scroll-button(left):disabled {
+.categoryCarousel::scroll-button(right):disabled,
+.categoryCarousel::scroll-button(left):disabled {
     opacity: 0.6;
 }
 
-.s3-carousel::scroll-button(right):hover,
-.s3-carousel::scroll-button(left):hover {
+.categoryCarousel::scroll-button(right):hover,
+.categoryCarousel::scroll-button(left):hover {
     opacity: 0.8;
 }
 
 .carousel-box {
     flex: 0 0 15rem;
     height: 25rem;
-    background-color: #4c2b17;
-    border-radius: 0.2em;
+    border-radius: 2rem;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     text-align: center;
+    border: 0.5rem outset;
+    cursor: pointer;
+    transition: 0.4s ease;
+    scroll-snap-align: start; /* Innehållet placeras snyggare vid scrollning */
+}
+
+.carousel-box:hover {
+    transform: scale(1.05);
 }
 
 /* Bildstil exakt som i övre karusellen */
@@ -496,19 +649,52 @@ body.dark-mode .darkMode-icon {
     width: 80%;
     height: 70%;
     object-fit: cover;
+    border: 0.7rem double;
+    border-radius: 1rem;
 }
 
 /* Textstil — kategori istället för boktitel */
 .carousel-box p {
-    margin-top: 0.5rem;
+    margin-top: 2rem;
     font-size: 1.5rem;
-    color: white;
 }
 
-/* ====================== "S4" Config ====================== */
-#s4 {
-    border: 3px solid red;
-    height: 30rem;
+.light-mode #popularCategories {
+    background: url(assets/images/pexels-edward-jenner-4252521.jpg);
+    background-size: cover;
+}
+
+.light-mode .carousel-box {
+    border-color: #4c2b17;
+    background: #4c2b17;
+}
+
+.light-mode .carousel-box img {
+    border-color: #deb887;
+}
+
+.light-mode .carousel-box p {
+    color: #f0ece1;
+    text-shadow: 2px 2px black;
+}
+
+.dark-mode #popularCategories {
+    background: url(assets/images/pexels-pixabay-301378.jpg);
+    background-size: cover;
+}
+
+.dark-mode .carousel-box {
+    background: #deb887;
+    border-color: #deb887;
+}
+
+.dark-mode .carousel-box img {
+    border-color: #4c2b17;
+}
+
+.dark-mode .carousel-box p {
+    color: #4c2b17;
+    text-shadow: 2px 2px #f0ece1;
 }
 
 /* ====================== Favorit-listan Config ====================== */
@@ -581,11 +767,75 @@ body.dark-mode .darkMode-icon {
     height: 1.6rem;
 }
 
+.light-mode .favoritesBookCard {
+    background: #4c2b17;
+}
+
+.light-mode .favoritesBookCard .book-info,
+.favoritesBookCard .book-cover {
+    border-color: #deb887;
+}
+
+.light-mode .favoritesBookCard .book-info h2,
+.favoritesBookCard .book-info h3 {
+    text-shadow: 2px 2px #deb887;
+}
+
+.dark-mode .favoritesBookCard {
+    background-color: #deb887;
+}
+
+.dark-mode .book-cover,
+.book-info {
+    border-color: #4c2b17;
+    color: #4c2b17;
+}
+
+.dark-mode .favoritesBookCard .book-info h2,
+.favoritesBookCard .book-info h3 {
+    text-shadow: 2px 2px #4c2b17;
+}
+
 /* ====================== Footer Config ====================== */
 footer {
     padding: 1rem;
-    background: #4c2b17;
-    opacity: 0.95;
+    background-color: #4c2b17;
+}
+
+.footerInfo {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+
+.footerInfo a {
+    font-size: 1.2rem;
+    color: white;
+}
+
+.footerInfo a:hover {
+    text-decoration-line: underline;
+}
+
+.footerLogo {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.footerLogo a {
+    color: white;
+    font-size: 2rem;
+}
+
+.footerLogo img {
+    height: 2.2rem;
+    width: 3rem;
+}
+
+.footerLogo a:hover {
+    text-decoration-line: underline;
+    text-decoration-color: white;
 }
 
 .app-shops {
@@ -593,10 +843,12 @@ footer {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    margin: 1rem;
 }
 
 .app-shops-icons a {
     transition: 0.4s ease;
+    color: #deb887;
 }
 
 .app-shops-icons a:hover {
@@ -608,6 +860,11 @@ footer {
 @media (max-width: 1200px) {
     .nav-logo {
         font-size: 2.8rem;
+    }
+
+    .logo-icon {
+        height: 3rem;
+        width: 4rem;
     }
 
     .nav-menu {
@@ -631,7 +888,7 @@ footer {
     }
 
     .dark-mode .hero nav {
-        background: rgba(76, 43, 23, 0.7);
+        background: rgba(34, 20, 10, 0.7);
         backdrop-filter: none;
     }
 
@@ -660,6 +917,42 @@ footer {
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
+
+    #favoritesHeroHeader {
+        text-align: center;
+    }
+
+    #favoritesHeroHeader h2 {
+        font-size: 6rem;
+    }
+
+    #favoritesHeroHeader p {
+        font-size: 2.4rem;
+    }
+
+    .heroHeader {
+        text-align: center;
+    }
+
+    .heroHeader h2 {
+        font-size: 6rem;
+    }
+
+    .section-header {
+        text-align: center;
+    }
+
+    #popularCategories h2 {
+        font-size: 3.5rem;
+    }
+
+    .footerInfo a {
+        font-size: 1.1rem;
+    }
+
+    .app-shops-icons a {
+        font-size: 1.5rem;
+    }
 }
 
 /*
@@ -669,6 +962,7 @@ https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp
 https://www.w3schools.com/charsets/ref_utf_arrows_supp_c.asp
 https://www.w3schools.com/howto/howto_js_slideshow.asp
 https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button
 
 ==== Övrig Information ===
 Kombinationen #4C2B17 (brun färg) och #DFBC8E (beige färg) gav AAA-betyg i Color Review

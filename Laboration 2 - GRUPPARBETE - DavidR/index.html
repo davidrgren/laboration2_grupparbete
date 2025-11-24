@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bokfavoriten - Spara dina favoritböcker!</title>
+        <title>📖 Bokfavoriten - Spara dina favoritböcker!</title>
 
         <!-- Importera ikoner/symboler -->
         <link
@@ -19,6 +19,7 @@
     <body class="light-mode">
         <!-- Hero -->
         <section class="hero" id="homePage">
+            <!-- Nav -->
             <nav>
                 <div class="nav-container">
                     <a href="index.html" class="nav-logo"
@@ -28,12 +29,14 @@
                             class="logo-icon"
                         />Bokfavoriten</a
                     >
+                    <!-- Hamburgarmenyn för mindre skärmar -->
                     <button class="menu-toggle">
                         <span class="bar"></span><span class="bar"></span
                         ><span class="bar"></span>
                     </button>
                     <ul class="nav-menu">
                         <li>
+                            <!-- Byt mellan ljust och mörkt läge button -->
                             <button id="theme-button">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -62,25 +65,231 @@
                             </button>
                             <a href="index.html">Hem</a>
                             <a href="favorites.html">Favoriter</a>
-                            <a href="#s3">Kategorier</a>
+                            <a href="#popularCategories">Kategorier</a>
                             <a href="#">Hitta oss!</a>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <!-- Rubrik och searchbar -->
+            <div class="heroHeader">
+                <h2>Sök Efter En Bok</h2>
+                <div class="searchBar">
+                    <input
+                        type="text"
+                        id="book-search"
+                        placeholder="Boktitel..."
+                    />
+                    <button id="search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
         </section>
 
-        <!-- Sektion 2 -->
-        <section id="s2">
-            <!-- söknings rutan -->
-            <div class="search-wrapper">
-                <input
-                    type="text"
-                    id="book-search"
-                    placeholder="Sök efter en bok..."
-                />
-                <button id="search-btn"><i class="fa fa-search"></i></button>
+        <!-- Bok-karusell -->
+        <section id="bookCarousel-section">
+            <div class="bookCarousel">
+                <div class="bookCarousel-group">
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                </div>
+                <div aria-hidden class="bookCarousel-group">
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                    <div class="bookCarousel-card">
+                        <img
+                            src="assets/images/imagePlaceholder.png"
+                            alt="Book Cover"
+                            class="book-cover"
+                        />
+                        <div class="book-info">
+                            <h2>Book Title</h2>
+                            <h3>Author Name</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Sökresultat -->
+        <section id="searchResults">
+            <div><h3 id="searchForBooks">Sök efter en bok!</h3></div>
+        </section>
+
+        <!-- Populära kategorier -->
+        <section id="popularCategories" aria-label="Populära Kategorier">
+            <!-- Sektion 3 Header -->
+            <div class="section-header">
+                <h2>Populära Kategorier</h2>
+            </div>
+            <!-- Bok-karusell -->
+            <div class="categoryCarousel">
+                <div class="carousel-box"><h3>1</h3></div>
+                <div class="carousel-box"><h3>2</h3></div>
+                <div class="carousel-box"><h3>3</h3></div>
+                <div class="carousel-box"><h3>4</h3></div>
+                <div class="carousel-box"><h3>5</h3></div>
+                <div class="carousel-box"><h3>6</h3></div>
+                <div class="carousel-box"><h3>7</h3></div>
+                <div class="carousel-box"><h3>8</h3></div>
+                <div class="carousel-box"><h3>9</h3></div>
+                <div class="carousel-box"><h3>10</h3></div>
+                <div class="carousel-box"><h3>11</h3></div>
+                <div class="carousel-box"><h3>12</h3></div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footerInfo">
+                <a href="#" class="footerLinks">Hjälp</a
+                ><a href="#" class="footerLinks">Kontakta Oss</a
+                ><a href="#" class="footerLinks">Jobba Hos Oss</a
+                ><a href="#" class="footerLinks">Användarvillkor</a>
+            </div>
+            <div class="footerLogo">
+                <a href="#homePage"
+                    ><img
+                        src="assets/icons/logo_cropped.png"
+                        alt=""
+                        class="logo-icon"
+                    />Bokfavoriten</a
+                >
+            </div>
+            <div class="app-shops">
+                <!-- Buttons/länkar till app-butiker -->
+                <div class="app-shops-icons">
+                    <a href="#" class="fa-brands fa-app-store">
+                        <small>Appstore</small></a
+                    >
+                </div>
+                <div class="app-shops-icons">
+                    <a href="#" class="fa-brands fa-google-play">
+                        <small>Google Play</small></a
+                    >
+                </div>
+            </div>
+        </footer>
+        <!-- Äldre version av karusellen (TAS BORT!!) -->
+        <section id="s2">
             <div class="carousel">
                 <div class="carousel-group">
                     <div class="carousel-cell">1</div>
@@ -100,53 +309,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Sektion 3 -->
-        <section id="s3" aria-label="s3">
-            <!-- Sektion 3 Header -->
-            <div class="section-header">
-                <h2>Kategorier</h2>
-                <p>Dem populäraste bok kategorierna</p>
-            </div>
-            <!-- Bok-karusell -->
-            <div class="s3-carousel">
-                <div class="carousel-box"><h3>1</h3></div>
-                <div class="carousel-box"><h3>2</h3></div>
-                <div class="carousel-box"><h3>3</h3></div>
-                <div class="carousel-box"><h3>4</h3></div>
-                <div class="carousel-box"><h3>5</h3></div>
-                <div class="carousel-box"><h3>6</h3></div>
-                <div class="carousel-box"><h3>7</h3></div>
-                <div class="carousel-box"><h3>8</h3></div>
-                <div class="carousel-box"><h3>9</h3></div>
-                <div class="carousel-box"><h3>10</h3></div>
-                <div class="carousel-box"><h3>11</h3></div>
-                <div class="carousel-box"><h3>12</h3></div>
-            </div>
-        </section>
-
-        <!-- SEKTION 4 -->
-        <section id="s4"></section>
-
-        <!-- SEKTION 5 -->
-        <section id="s5"></section>
-
-        <!-- FOOTER -->
-        <footer>
-            <div class="app-shops">
-                <!-- Buttons/länkar till app-butiker -->
-                <div class="app-shops-icons">
-                    <a href="#" class="fa-brands fa-app-store">
-                        <small>Appstore</small></a
-                    >
-                </div>
-                <div class="app-shops-icons">
-                    <a href="#" class="fa-brands fa-google-play">
-                        <small>Google Play</small></a
-                    >
-                </div>
-            </div>
-        </footer>
     </body>
     <script src="script.js"></script>
 </html>
