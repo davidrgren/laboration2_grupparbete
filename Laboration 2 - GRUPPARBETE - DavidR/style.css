@@ -33,8 +33,7 @@ svg {
     font-weight: bold;
 }
 
-.light-mode .carousel-cell,
-.bar {
+.light-mode .bar {
     background-color: #4c2b17;
 }
 
@@ -53,15 +52,11 @@ svg {
 }
 
 .dark-mode svg {
-    fill: #deb887; /* Denna kod fungerar bara om den är självständig av någon anledning */
+    fill: #deb887;
 }
 
 .dark-mode .bar {
     background: #deb887;
-}
-
-.dark-mode .carousel-cell {
-    background-color: #deb887;
 }
 
 .dark-mode .removeFavoritesBtn {
@@ -297,13 +292,13 @@ svg {
 }
 
 /* ====================== Bok-karusell Config ====================== */
-#bookCarousel-section {
+#s2 {
     height: 35rem;
     display: flex;
 }
 
 /* Bok-karusell */
-.bookCarousel {
+.carousel {
     display: flex;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -314,7 +309,7 @@ svg {
     scrollbar-width: none; /* Gömmer scrollbar för Firefox */
 }
 
-.bookCarousel-group {
+.carousel-group {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -323,21 +318,37 @@ svg {
     padding-right: 3rem; /* Utrymme mellan karusell-grupperna */
 }
 
-.bookCarousel::-webkit-scrollbar {
+.carousel::-webkit-scrollbar {
     display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
 }
 
-.bookCarousel-card {
+.carousel-cell {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     overflow: hidden;
-    padding: 1.2rem;
+    padding: 1rem;
     height: 28rem;
     width: 18rem;
     border-radius: 3rem;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.carousel-cell img {
+    width: 80%;
+    height: 70%;
+    object-fit: cover;
+    border: 0.8rem double;
+    border-radius: 1rem;
+}
+
+.carousel-cell h4 {
+    font-size: 1.3rem;
+    border: 0.4rem double;
+    border-radius: 1rem;
+    backdrop-filter: blur(20px);
 }
 
 @keyframes spin {
@@ -350,59 +361,52 @@ svg {
 }
 
 /* Bok-karusell ljust/mörkt tema config*/
-.light-mode #bookCarousel-section {
+.light-mode #s2 {
     background: url(assets/images/pexels-fwstudio-33348-172303.jpg);
     background-size: cover;
 }
 
-.light-mode .bookCarousel-card {
-    background: #4c2b17;
+.light-mode .carousel-cell {
+    background: url(assets/images/pexels-alfomedeiros-19446110.jpg);
+    background-size: cover;
 }
 
-.light-mode .bookCarousel-card .book-info,
-.bookCarousel-card .book-cover {
+.light-mode .carousel-cell img,
+.carousel-cell h4 {
     border-color: #deb887;
 }
 
-.light-mode .bookCarousel-card .book-info h2,
-.bookCarousel-card .book-info h3 {
-    text-shadow: 2px 2px #deb887;
+.light-mode .carousel-cell h4 {
+    text-shadow: 2px 2px black;
+    color: #f0ece1;
+    padding: 0.5rem;
 }
 
-.dark-mode #bookCarousel-section {
+.dark-mode #s2 {
     background: url(assets/images/pexels-efrem-efre-2786187-34464883.jpg);
     background-size: cover;
 }
 
-.dark-mode .bookCarousel-card {
-    background: #deb887;
+.dark-mode .carousel-cell {
+    background: url(assets/images/pexels-186116490-11751919.jpg);
+    background-size: cover;
 }
 
-.dark-mode .bookCarousel-card .book-info {
+.dark-mode .carousel-cell img {
     border-color: #4c2b17;
 }
 
-.dark-mode .bookCarousel-card .book-info h2,
-.bookCarousel-card .book-info h3 {
-    text-shadow: 2px 2px #4c2b17;
+.dark-mode .carousel-cell h4 {
+    border-color: #4c2b17;
+}
+
+.dark-mode .carousel-cell h4 {
+    color: #4c2b17;
+    text-shadow: 1px 1px #f0ece1;
+    padding: 0.5rem;
 }
 
 /* ====================== Sökresultat Config ====================== */
-#searchResults {
-    min-height: 20rem;
-}
-
-#searchForBooks {
-    padding: 8rem;
-    text-align: center;
-}
-
-#searchResults h3 {
-    color: gray;
-    font-size: 3rem;
-    opacity: 0.6;
-}
-
 .search-wrapper {
     width: 100%;
     display: flex;
@@ -470,55 +474,6 @@ svg {
 .favorite-btn:hover {
     transform: scale(1.2);
     background: rgba(0, 0, 0, 0.7);
-}
-
-/* ====================== S2 (TAS BORT SENARE!) Config ====================== */
-#s2 {
-    height: 35rem;
-    color: white;
-}
-
-/* Bok-karusell */
-.carousel {
-    display: flex;
-    margin-top: 5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    -ms-overflow-style: none; /* Gömmer scrollbar för Edge */
-    scrollbar-width: none; /* Gömmer scrollbar för Firefox */
-}
-
-.carousel-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    animation: spin 30s infinite linear;
-    padding-right: 3rem; /* Utrymme mellan karusell-grupperna */
-}
-
-.carousel::-webkit-scrollbar {
-    display: none; /* Gömmer scrollbar för Chrome, Safari och Opera */
-}
-
-.carousel-cell {
-    height: 25rem;
-    width: 15rem;
-    font-size: 3rem;
-    border-radius: 0.2em;
-    text-align: center; /* Ändra senare? */
-    align-content: center;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.9);
-}
-
-@keyframes spin {
-    from {
-        translate: 0;
-    }
-    to {
-        translate: -100%;
-    }
 }
 
 /* ====================== Populära Kategorier Config ====================== */
@@ -954,17 +909,3 @@ footer {
         font-size: 1.5rem;
     }
 }
-
-/*
-==== Dokumentation och länkar som använts ====
-https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
-https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp
-https://www.w3schools.com/charsets/ref_utf_arrows_supp_c.asp
-https://www.w3schools.com/howto/howto_js_slideshow.asp
-https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
-https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button
-
-==== Övrig Information ===
-Kombinationen #4C2B17 (brun färg) och #DFBC8E (beige färg) gav AAA-betyg i Color Review
-
-*/
