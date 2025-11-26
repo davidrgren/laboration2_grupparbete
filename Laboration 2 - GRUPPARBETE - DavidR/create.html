@@ -3,8 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>📖 Bokfavoriten - Mina Favoriter</title>
-
+        <title>📖 Bokfavoriten - Skapa din egen bok!</title>
         <!-- Importera ikoner/symboler -->
         <link
             rel="stylesheet"
@@ -15,8 +14,8 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body class="light-mode">
-        <!-- Hero -->
-        <section class="hero" id="favoritesPage">
+        <!-- Skapa Hero -->
+        <section class="hero" id="createPage">
             <nav>
                 <div class="nav-container">
                     <a href="index.html" class="nav-logo"
@@ -61,109 +60,50 @@
                             <a href="index.html">Hem</a>
                             <a href="favorites.html">Favoriter</a>
                             <a href="create.html">Skapa</a>
-                            <a href="#findUs-favorites">Hitta oss!</a>
+                            <a href="#findUs-createBook">Hitta oss!</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <div id="favoritesHeroHeader">
-                <h2>Mina Favoriter</h2>
-                <p>Bläddra bland böckerna du har valt som favoriter</p>
+            <div id="createHeroHeader">
+                <h2>Skapa en bok</h2>
+                <p>Saknas din favoritbok? Skapa den själv!</p>
             </div>
         </section>
 
-        <!-- Favorit-listan Sektion Config -->
-        <section id="favoritesList">
-            <div class="favoritesBookCard">
-                <img
-                    src="assets/images/imagePlaceholder.png"
-                    alt="Book Cover"
-                    class="book-cover"
-                />
-                <div class="book-info">
-                    <h2>Book Title</h2>
-                    <h3>Author Name</h3>
+        <!-- Skapa egen bok -->
+        <section class="createBook">
+            <div class="createBookBox">
+                <div class="createBookTitle">
+                    <h3>Boktitel</h3>
+                    <input type="text" placeholder="Boktitel..." />
                 </div>
-                <button
-                    class="removeFavoritesBtn"
-                    title="Remove this book as favorite"
-                >
-                    <img src="assets/icons/delete.png" alt="Delete" />
-                </button>
+                <div class="createBookAuthor">
+                    <h3>Författare</h3>
+                    <input type="text" placeholder="Författare..." />
+                </div>
+                <div class="addBook"><button>Lägg till din bok</button></div>
             </div>
-            <div class="favoritesBookCard">
+        </section>
+
+        <!-- Mina böcker -->
+        <section class="myBooks">
+            <div class="myBookCard">
                 <img
                     src="assets/images/imagePlaceholder.png"
-                    alt="Book Cover"
+                    alt="Template Book Cover"
                     class="book-cover"
                 />
                 <div class="book-info">
                     <h2>Book Title</h2>
                     <h3>Author Name</h3>
                 </div>
-                <button
-                    class="removeFavoritesBtn"
-                    title="Remove this book as favorite"
-                >
-                    <img src="assets/icons/delete.png" alt="Delete" />
-                </button>
-            </div>
-            <div class="favoritesBookCard">
-                <img
-                    src="assets/images/imagePlaceholder.png"
-                    alt="Book Cover"
-                    class="book-cover"
-                />
-                <div class="book-info">
-                    <h2>Book Title</h2>
-                    <h3>Author Name</h3>
-                </div>
-                <button
-                    class="removeFavoritesBtn"
-                    title="Remove this book as favorite"
-                >
-                    <img src="assets/icons/delete.png" alt="Delete" />
-                </button>
-            </div>
-            <div class="favoritesBookCard">
-                <img
-                    src="assets/images/imagePlaceholder.png"
-                    alt="Book Cover"
-                    class="book-cover"
-                />
-                <div class="book-info">
-                    <h2>Book Title</h2>
-                    <h3>Author Name</h3>
-                </div>
-                <button
-                    class="removeFavoritesBtn"
-                    title="Remove this book as favorite"
-                >
-                    <img src="assets/icons/delete.png" alt="Delete" />
-                </button>
-            </div>
-            <div class="favoritesBookCard">
-                <img
-                    src="assets/images/imagePlaceholder.png"
-                    alt="Book Cover"
-                    class="book-cover"
-                />
-                <div class="book-info">
-                    <h2>Book Title</h2>
-                    <h3>Author Name</h3>
-                </div>
-                <button
-                    class="removeFavoritesBtn"
-                    title="Remove this book as favorite"
-                >
+                <button class="removeFavoritesBtn" title="Remove this book">
                     <img src="assets/icons/delete.png" alt="Delete" />
                 </button>
             </div>
         </section>
-        <script src="favorites.js"></script>
-        <script src="script.js"></script>
-        <!-- FOOTER -->
-        <footer id="findUs-favorites">
+        <footer id="findUs-createBook">
             <div class="footerInfo">
                 <a href="#" class="footerLinks">Hjälp</a
                 ><a href="#" class="footerLinks">Kontakt</a
@@ -194,4 +134,5 @@
             </div>
         </footer>
     </body>
+    <script src="script.js"></script>
 </html>

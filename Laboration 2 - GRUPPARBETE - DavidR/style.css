@@ -135,6 +135,7 @@ svg {
 .dark-mode .heroHeader h2 {
     text-shadow: 5px 5px #4c2b17;
 }
+
 /* ====================== Searchbar Config ====================== */
 .searchBar {
     height: 5rem;
@@ -762,6 +763,196 @@ svg {
     text-shadow: 2px 2px #4c2b17;
 }
 
+/* ====================== Skapa egen bok Config ====================== */
+#createPage {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)),
+        url(assets/images/pexels-suzyhazelwood-1122865.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 75vh;
+    min-height: 35rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Mjukare kant */
+}
+
+#createHeroHeader {
+    color: #f0ece1; /* Snällare färg än helvitt */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+#createHeroHeader h2 {
+    font-size: 10rem;
+}
+
+#createHeroHeader p {
+    font-size: 3rem;
+}
+
+.light-mode #createHeroHeader h2,
+.heroHeader h2 {
+    text-shadow: 5px 5px black;
+}
+
+.light-mode #createHeroHeader p {
+    text-shadow: 2px 2px black;
+}
+
+.dark-mode #createHeroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
+
+.dark-mode #createHeroHeader p {
+    text-shadow: 2px 2px #4c2b17;
+}
+
+.dark-mode #createHeroHeader h2 {
+    text-shadow: 5px 5px #4c2b17;
+}
+
+.createBook {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.createBookBox {
+    border: 0.7rem double;
+    padding: 1rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.createBookTitle input,
+.createBookAuthor input {
+    margin: 0 1rem 1rem 1rem;
+    height: 3rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding-left: 0.7rem;
+}
+
+.createBookTitle h3,
+.createBookAuthor h3 {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.addBook button {
+    font-family: 'IM Fell English SC', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    transition: 0.6s ease;
+    cursor: pointer;
+}
+
+.addBook button:hover {
+    transform: scale(1.1);
+}
+
+.light-mode .addBook button {
+    background-color: #4c2b17;
+    color: #f0ece1;
+    text-shadow: 2px 2px black;
+}
+
+.dark-mode .addBook button {
+    background-color: #deb887;
+    color: #4c2b17;
+    text-shadow: 2px 2px #f0ece1;
+}
+
+.myBooks {
+    height: auto;
+    padding: 5rem 3rem 3rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.myBookCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 1rem;
+    height: 28rem;
+    width: 14rem;
+    border-radius: 2rem;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.light-mode .createBook {
+    background: url(assets/images/pexels-fwstudio-33348-172303.jpg);
+    background-size: cover;
+}
+
+.light-mode .myBookCard {
+    background: #4c2b17;
+}
+
+.light-mode .myBookCard .book-info,
+.myBookCard .book-cover {
+    border-color: #deb887;
+}
+
+.light-mode .myBookCard .book-info h2,
+.myBookCard .book-info h3 {
+    text-shadow: 2px 2px black;
+}
+
+.light-mode .createBookBox {
+    border-color: #4c2b17;
+}
+
+.light-mode .createBookTitle h3,
+.createBookAuthor h3 {
+    text-shadow: 2px 2px #f0ece1;
+}
+
+.dark-mode .createBook {
+    background: url(assets/images/pexels-pixabay-301378.jpg);
+    background-size: cover;
+}
+
+.dark-mode .myBookCard {
+    background: #deb887;
+}
+
+.dark-mode .myBookCard .book-info {
+    border-color: #4c2b17;
+}
+
+.dark-mode .myBookCard .book-cover {
+    border-color: #4c2b17;
+}
+
+.dark-mode .myBookCard .book-info h2 {
+    text-shadow: 2px 2px black;
+}
+
+.dark-mode .myBookCard .book-info h3 {
+    text-shadow: 2px 2px black;
+}
+
+.dark-mode .createBookTitle h3 {
+    text-shadow: 2px 2px black;
+}
+
+.dark-mode .createBookAuthor h3 {
+    text-shadow: 2px 2px black;
+}
+
 /* ====================== Footer Config ====================== */
 footer {
     padding: 1rem;
@@ -911,6 +1102,33 @@ footer {
 
     #popularCategories h2 {
         font-size: 3.5rem;
+    }
+
+    #createHeroHeader {
+        text-align: center;
+    }
+
+    #createHeroHeader h2 {
+        font-size: 6rem;
+    }
+
+    #createHeroHeader p {
+        font-size: 2.4rem;
+    }
+
+    .createBookTitle input,
+    .createBookAuthor input {
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    .createBookTitle h3,
+    .createBookAuthor h3 {
+        font-size: 1.6rem;
+    }
+
+    .addBook button {
+        font-size: 1.4rem;
     }
 
     .footerInfo a {
